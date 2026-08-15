@@ -1,0 +1,24 @@
+#https://leetcode.com/problems/longest-subsequence-with-non-zero-bitwise-xor/?envType=daily-question&envId=2026-08-15
+from typing import List 
+class Solution:
+    def longestSubsequence(self, nums: List[int]) -> int:
+        tot=0
+        c=0
+        for i in nums:
+            tot^=i
+            if i!=0:
+                c+=1
+        if tot!=0:
+            return len(nums)
+        if c!=0:
+            return len(nums)-1
+        else:
+            return 0
+
+nums=list(map(int,input("Enter Number: ").split()))
+
+obj=Solution()
+
+answer = obj.longestSubsequence(nums)
+
+print(answer)
