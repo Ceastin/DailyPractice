@@ -1,0 +1,12 @@
+https://leetcode.com/problems/longest-subsequence-with-non-zero-bitwise-xor/description/?envType=daily-question&envId=2026-08-15
+class Solution {
+    public int longestSubsequence(int[] nums) {
+        int tot=0;
+        int c=0;
+        for(int i=0;i<nums.length;i++){
+            tot^=nums[i]; 
+            if(nums[i]!=0)c++;
+        }
+        return tot!=0?nums.length:c!=0?nums.length-1:0;
+    }
+}
